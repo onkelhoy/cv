@@ -1,7 +1,27 @@
 :host {
-  display: block;
-  padding: var(--padding-medium, 16px);
+  display: inline;
 
-  background-color: var(--image-background-color, var(--pap-color-bg, white));
-  color: var(--image-text-color, var(--pap-color-text, black));
+  img {
+    filter: grayscale(100%);
+  }
+}
+
+:host([variant=avatar]) {
+  img {
+    border-radius: 50%;
+  }
+
+  position: relative;
+  padding: 8px;
+  box-sizing: border-box;
+
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: blue;
+  }
 }
